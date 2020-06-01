@@ -2,7 +2,7 @@
 cross-modal model between audio(MFCC) and text(KoBERT)
 
 - `main.py`
-  - `../../split_dataset_vat`: [data.zip](https://drive.google.com/open?id=1GmhSGaDiGVE4LuTHay-n17kIC2EF79eF)
+  - `../../split_dataset_1channel`: [split_dataset_1channel](https://drive.google.com/open?id=1OY7DWBcLnRLU0BLGkc-OtlfMINwJWKnu)
   - `./korbert_vat/best_model`: [best_model](https://drive.google.com/open?id=1Pbyx8Lwss27HGiW3-3jfzVnqOwH-bwTo)
 - `dataset.py`
   - `korbert_vat.pretrained_model`: [pretrained_model](https://drive.google.com/open?id=1rPtnqyKkME_6ZZUrvgkalfzIqedMQYf4)
