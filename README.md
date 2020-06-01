@@ -1,4 +1,4 @@
-# audiotext-transformer
+# AudioText-Transformer
 cross-modal model between audio(MFCC) and text(KoBERT)
 
 - `main.py`
@@ -101,6 +101,6 @@ optional arguments:
 ```
 ---
 
-- reference
-
+- Reference
+  - https://github.com/JhnLee/multimodal-transformer
 
