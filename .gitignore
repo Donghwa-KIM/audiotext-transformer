@@ -6,3 +6,4 @@
 /kobert_vat/pretrained_model/
 /kobert_vat/__pycache__
 /font
+*.ipynb
