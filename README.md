@@ -1,6 +1,12 @@
 # audiotext-transformer
 cross-modal model between audio(MFCC) and text(KoBERT)
 
+- `main.py`
+  - `../../split_dataset_vat`: [data.zip](https://drive.google.com/open?id=1GmhSGaDiGVE4LuTHay-n17kIC2EF79eF)
+  - `./korbert_vat/best_model`: [best_model](https://drive.google.com/open?id=1Pbyx8Lwss27HGiW3-3jfzVnqOwH-bwTo)
+- `dataset.py`
+  - `korbert_vat.pretrained_model`: [pretrained_model](https://drive.google.com/open?id=1rPtnqyKkME_6ZZUrvgkalfzIqedMQYf4)
+
 ```
 usage: main.py [-h] [--do_audio] [--merge_how MERGE_HOW] [--model MODEL]
                [--data_name DATA_NAME] [--data_path DATA_PATH]
