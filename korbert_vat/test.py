@@ -29,9 +29,6 @@ import itertools
 logger = utils.get_logger('BERT Classification')
 logger.setLevel(logging.INFO)
 
-# pretrained_model_path = './senti_model/best_model.bin'
-# config_path = './senti_model/bert_config.json'
-# args_path = './senti_model/training_args.bin'
 
 pretrained_model_path = './best_model/best_model.bin'
 config_path = './best_model/bert_config.json'
