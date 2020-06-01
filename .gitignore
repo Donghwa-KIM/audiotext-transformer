@@ -7,3 +7,4 @@
 /kobert_vat/__pycache__
 /font
 *.ipynb
+*.ipynb_checkpoints
