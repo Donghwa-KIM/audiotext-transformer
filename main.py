@@ -456,7 +456,7 @@ def main():
         "--data_name", type=str, default="vat", help="dataset to use (default: vat)"
     )
     parser.add_argument(
-        "--data_path", type=str, default="../../split_datasets_vat", help="path for storing the dataset"
+        "--data_path", type=str, default="../../split_dataset_1channel", help="path for storing the dataset"
     )
     parser.add_argument(
         "--bert_config_path", type=str, default="./korbert_vat/best_model/bert_config.json", help="bert_config_path"
