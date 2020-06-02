@@ -428,7 +428,10 @@ def draw_cm(args, label_list, cm):
     ax.set_xticklabels(label_list, fontproperties=fontprop)
     plt.yticks(tick_marks)
     ax.set_yticklabels(label_list, fontproperties=fontprop)
-
+    
+    plt.xlim(-0.5, len(label_list)-0.5)
+    plt.ylim(-0.5, len(label_list)-0.5)
+    
     thresh = cm.max() / 2.
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
         plt.text(j, i, cm[i, j],
