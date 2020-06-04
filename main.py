@@ -613,7 +613,7 @@ def main():
                                 
     model = MULTModel(
         only_audio=args.do_audio,
-        merge_how= 'average',
+        merge_how= args.merge_how,
         orig_d_a=orig_d_a,
         orig_d_t=orig_d_t,
         n_head=args.num_heads,
