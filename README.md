@@ -321,3 +321,7 @@ $ ./test_cross.sh
 - Confusion matrix
 
 ![](./images/cross-cm.png)
+
+# Reference
+
+https://github.com/JhnLee/multimodal-transformer
