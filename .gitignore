@@ -9,3 +9,5 @@
 *.ipynb
 *.ipynb_checkpoints
 *__pycache__
+/crossModal_model
+/data
