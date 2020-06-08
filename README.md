@@ -38,7 +38,7 @@ Pretrained Korean Bert Model (ETRI) and fine-tuned by multi-sentiment dataset
 ```
 
 # Datasets
-
+---
 - Multi-sentiment classification
     - which have seven emotions from text, audio, video (ang, fea, neu, sad, hap, sur, dis)
     - each class has 50 scripts for acting 
@@ -163,11 +163,11 @@ optional arguments:
 ```
 
 # Use only text
-
+---
 
 - Use BERT model for sentiment classification without fine-tuning
 
-![](https://tde.sktelecom.com/wiki/download/thumbnails/293146120/image2020-6-1_22-20-30.png?version=1&modificationDate=1591017631000&api=v2)
+![](./images/bert.png)
 
 - BERT classification can be launched by running:
 
@@ -198,16 +198,18 @@ $ ./korbert_vat/test.sh
 
 - Confusion matrix
 
+![](./images/bert_cm.png)
 
-![](https://tde.sktelecom.com/wiki/download/attachments/293146120/image2020-6-1_20-20-36.png?version=1&modificationDate=1591010437000&api=v2)
 
 # Use only audio
 
+----
 
 - Use Transformer model with MFCCs from the audios
 
 
-![](https://tde.sktelecom.com/wiki/download/thumbnails/293146120/image2020-6-1_22-15-57.png?version=1&modificationDate=1591017358000&api=v2)
+![](./images/audio.png)
+
 
 - Train the model 
     - max sequence length for MFCCs was set as 400
@@ -270,16 +272,19 @@ $ ./test_audio.sh
 
 - Confusion matrix
 
-![](https://tde.sktelecom.com/wiki/download/attachments/293146120/image2020-6-2_14-58-23.png?version=1&modificationDate=1591077503000&api=v2)
+![](./images/audio_cm.png)
+
 
 
 # Cross-modal Transformer
 
+---
 
 
 Cross-modal model between audio(MFCC) and text(KoBERT)
 
-![](https://tde.sktelecom.com/wiki/download/attachments/293146120/image2020-6-1_22-12-50.png?version=1&modificationDate=1591017174000&api=v2)
+![](./images/cross.png)
+
 
 - Training can be launched by running:
       
@@ -315,4 +320,4 @@ $ ./test_cross.sh
 
 - Confusion matrix
 
-![](https://tde.sktelecom.com/wiki/download/attachments/293146120/image2020-6-2_14-58-54.png?version=1&modificationDate=1591077533000&api=v2)
+![](./images/cross-cm.png)
