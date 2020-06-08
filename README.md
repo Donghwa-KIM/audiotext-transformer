@@ -75,7 +75,7 @@ Pretrained Korean Bert Model (ETRI) and fine-tuned by multi-sentiment dataset
 |         6 | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... | 오늘 입고 나가야지. |    행복 |
 |         8 | [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... | 오늘 입고 나가야지. |    행복 |
   
-Full documentation of the cross-modal training code train.py:
+Full documentation of the cross-modal training code `train.py`:
 
 ```
 usage: train.py [-h] [--do_audio] [--merge_how MERGE_HOW] [--model MODEL] [--data_name DATA_NAME]
