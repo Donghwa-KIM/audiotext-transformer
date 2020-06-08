@@ -38,7 +38,7 @@ Pretrained Korean Bert Model (ETRI) and fine-tuned by multi-sentiment dataset
 ```
 
 # Datasets
----
+
 - Multi-sentiment classification
     - which have seven emotions from text, audio, video (ang, fea, neu, sad, hap, sur, dis)
     - each class has 50 scripts for acting 
@@ -163,7 +163,7 @@ optional arguments:
 ```
 
 # Use only text
----
+
 
 - Use BERT model for sentiment classification without fine-tuning
 
@@ -203,7 +203,7 @@ $ ./korbert_vat/test.sh
 
 # Use only audio
 
-----
+
 
 - Use Transformer model with MFCCs from the audios
 
@@ -278,7 +278,7 @@ $ ./test_audio.sh
 
 # Cross-modal Transformer
 
----
+
 
 
 Cross-modal model between audio(MFCC) and text(KoBERT)
