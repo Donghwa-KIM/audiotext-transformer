@@ -382,9 +382,9 @@ def main():
     parser.add_argument("--n_gpu", default=1, type=int,
                         help="n_gpu")
     # Data Parameters
-    parser.add_argument("--train_data_path", default='../split_datasets_1channel/train.pkl', type=str,
+    parser.add_argument("--train_data_path", default='../split_datasets_vat/train.pkl', type=str,
                         help="train data path")
-    parser.add_argument("--dev_data_path", default='../split_datasets_1channel/dev.pkl', type=str,
+    parser.add_argument("--dev_data_path", default='../split_datasets_vat/dev.pkl', type=str,
                         help="dev data path")
     parser.add_argument("--max_len", default=90, type=int,
                         help="Maximum sequence length")

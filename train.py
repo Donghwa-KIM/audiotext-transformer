@@ -428,9 +428,10 @@ def draw_cm(args, label_list, cm):
     ax.set_xticklabels(label_list, fontproperties=fontprop)
     plt.yticks(tick_marks)
     ax.set_yticklabels(label_list, fontproperties=fontprop)
-    
-    plt.xlim(-0.5, len(label_list)-0.5)
+
+    plt.xlim(-1, len(label_list)-0.5)
     plt.ylim(-0.5, len(label_list)-0.5)
+    
     
     thresh = cm.max() / 2.
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
@@ -443,6 +444,9 @@ def draw_cm(args, label_list, cm):
     plt.xlabel('Predict', fontsize=12)
     plt.savefig(f'{args.cls_model_name}/{args.params_name}/test_result.png', dpi=300)
 
+    
+    
+    
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -459,7 +463,7 @@ def main():
         "--data_name", type=str, default="vat", help="dataset to use (default: vat)"
     )
     parser.add_argument(
-        "--data_path", type=str, default="../../split_dataset_1channel", help="path for storing the dataset"
+        "--data_path", type=str, default="./data", help="path for storing the dataset"
     )
     parser.add_argument(
         "--bert_config_path", type=str, default="./korbert_vat/best_model/bert_config.json", help="bert_config_path"
@@ -599,7 +603,6 @@ def main():
     
     train_data = get_data(args, args.data_name, label_list, "train")
     eval_data = get_data(args, args.data_name, label_list, "dev")
-    test_data = get_data(args, args.data_name, label_list, "test")
 
     bert_args = torch.load(args.bert_args_path)
     
@@ -640,57 +643,7 @@ def main():
     train(args, bert_args, label_list, train_data, eval_data, model)
     
     
-    
-    # test
-    if args.local_rank == -1 or torch.distributed.get_rank() == 0:
-
-        
-        
-        args = torch.load(f"{args.cls_model_name}/{args.params_name}/args.pt")
-        model = torch.load(f"{args.cls_model_name}/{args.params_name}/model.pt").to(args.device)
-        
-        
-        test_collate_fn = AudioTextBatchFunction(args= args,
-                                    pad_idx = test_data.pad_idx,
-                                    cls_idx = test_data.cls_idx, 
-                                    sep_idx = test_data.sep_idx,
-                                    bert_args = bert_args,
-                                    num_label_from_bert = len(label_list),
-                                    device = 'cpu'
-                                   )
-
-        tst_loss, tst_acc, tst_macro_f1, (total_y_hat, cm, cr) = evaluate(args, 
-                                                      label_list,
-                                                      test_data, 
-                                                      model, 
-                                                      torch.nn.CrossEntropyLoss(), 
-                                                      test_collate_fn)
-        
-        
-        # Save results in 'model_saved_finetuning/results.csv'
-        test_result_writer = ResultWriter(f"./{args.cls_model_name}/test_results.csv")
-
-        test_results = {
-            'tst_loss': tst_loss,
-            'tst_acc': tst_acc,
-            'tst_macro_f1' : tst_macro_f1
-        }
-        
-        # add f1 score for each class
-        test_results.update(cr)
-
-        # summary
-        test_result_writer.update(args, **test_results)
-
-        
-        
-        # confusion matrix
-        draw_cm(args,label_list, cm) 
-        
-        # real/prediction results
-        tmp = pd.read_pickle(os.path.join(args.data_path,"test.pkl")) 
-        tmp['Pred'] = [label_list[i] for i in total_y_hat]
-        tmp[['Emotion','Pred']].to_csv(f'./{args.cls_model_name}/{args.params_name}/test_pred_result.csv')
+ 
         
         
 if __name__ == "__main__":

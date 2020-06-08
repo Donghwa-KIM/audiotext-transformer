@@ -29,6 +29,9 @@ import itertools
 logger = utils.get_logger('BERT Classification')
 logger.setLevel(logging.INFO)
 
+# pretrained_model_path = './senti_model/best_model.bin'
+# config_path = './senti_model/bert_config.json'
+# args_path = './senti_model/training_args.bin'
 
 pretrained_model_path = './best_model/best_model.bin'
 config_path = './best_model/bert_config.json'
@@ -73,7 +76,8 @@ def draw_cm(cm):
     ax.set_xticklabels(label_list, fontproperties=fontprop)
     plt.yticks(tick_marks)
     ax.set_yticklabels(label_list, fontproperties=fontprop)
-
+    plt.xlim(-1, len(label_list)-0.5)
+    plt.ylim(-0.5, len(label_list)-0.5)
     thresh = cm.max() / 2.
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
         plt.text(j, i, cm[i, j],
@@ -90,7 +94,7 @@ def draw_cm(cm):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--test_data_path", default='../split_datasets_vat/test.pkl', type=str,
+    parser.add_argument("--test_data_path", default='./data/test_stt.pkl', type=str,
                         help="test data path")
     args_ = parser.parse_args()
     pretrained = torch.load(pretrained_model_path)

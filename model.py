@@ -131,9 +131,10 @@ class MULTModel(nn.Module):
             #  (B, L, d) -> (L, B, d)  
             x_audio = self.audio_layers(x_audio,
                                         x_key_padding_mask=None)
-
+            
             if self.merge_how=='average':
                 # (bat, dim)
+                
                 features = x_audio.mean(dim=0)
             else:
                 # (bat, dim)
