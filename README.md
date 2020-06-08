@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 Pretrained Korean Bert Model (ETRI) and fine-tuned by multi-sentiment dataset
 
-- pretrained model
+- pretrained model([Download](https://drive.google.com/open?id=1rPtnqyKkME_6ZZUrvgkalfzIqedMQYf4))
 
 ```
 ├── korbert_vat
@@ -27,7 +27,7 @@ Pretrained Korean Bert Model (ETRI) and fine-tuned by multi-sentiment dataset
 │   │   │   └── vocab.korean.rawtext.list
 ```
 
-- fine-tunned model
+- fine-tunned model([Download](https://drive.google.com/open?id=1Pbyx8Lwss27HGiW3-3jfzVnqOwH-bwTo))
 
 ```
 ├── korbert_vat
@@ -52,7 +52,7 @@ Pretrained Korean Bert Model (ETRI) and fine-tuned by multi-sentiment dataset
         - Dev N = 35
         - Test N = 35
 - preprocessing
-    - convert `mt2s video format` to `wav audio 1-channel`
+    - convert `mt2s video format` to `wav audio 1-channel` [Download](https://drive.google.com/open?id=1OY7DWBcLnRLU0BLGkc-OtlfMINwJWKnu)
     - `train.pkl`, `dev.pkl`, `test.pkl`은 실제 데이터에서 랜덤하게 split한 데이터는 아래와 같음
     - `test_stt.pkl`은 구글 STT모델을 적용하여 실제 text대신에 예측된 값을 저장  
 
